@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Professional Portfolio
 
-## Getting Started
+![Project Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
+![Tech Stack](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)
+![Tech Stack](https://img.shields.io/badge/TypeScript-Blue?style=for-the-badge&logo=typescript)
+![Tech Stack](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-First, run the development server:
+> "Bridging the gap between high-level strategy and technical execution."
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is the official portfolio website for a Professional Assistant and Customer Relations Professional. It showcases experience with C-suite executives, Agile coordination, and data-driven operations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚡ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-   **Modern Tech Stack:** Built with Next.js 14 (App Router) and TypeScript for type safety.
+-   **Zero-Runtime CSS:** Styled with Tailwind CSS for high performance and a clean, executive aesthetic.
+-   **Interactive UI:** Custom "Accordion" style portfolio cards that reveal details on click.
+-   **Serverless Contact Form:** Fully functional contact form connected to **Google Sheets** via Google Apps Script (No backend server required).
+-   **Responsive:** Fully optimized for Mobile, Tablet, and Desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+-   **Framework:** [Next.js](https://nextjs.org/)
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+-   **Language:** [TypeScript](https://www.typescriptlang.org/)
+-   **Form Backend:** [Google Apps Script](https://developers.google.com/apps-script)
+-   **Deployment:** [Vercel](https://vercel.com/)
 
-To learn more about Next.js, take a look at the following resources:
+## 🏁 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run this project locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/ebenezer-portfolio.git](https://github.com/YOUR_USERNAME/ebenezer-portfolio.git)
+    cd ebenezer-portfolio
+    ```
 
-## Deploy on Vercel
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Run the Development Server**
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 🔌 Configuration
+
+### Contact Form Setup
+The contact form does not use a standard API route. It posts data directly to a Google Sheet using a Web App URL.
+
+To update the destination sheet:
+1.  Go to `src/app/contact/page.tsx`.
+2.  Update the `GOOGLE_SCRIPT_URL` variable with your deployed Google Apps Script URL.
+
+### Images
+Images are currently hosted via Cloudinary (or placeholders). To allow new external image sources, update `next.config.ts`:
+```typescript
+images: {
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'res.cloudinary.com',
+    },
+  ],
+}
